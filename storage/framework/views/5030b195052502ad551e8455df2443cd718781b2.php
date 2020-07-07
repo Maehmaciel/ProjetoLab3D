@@ -8,37 +8,42 @@
     <script src="https://kit.fontawesome.com/6f4a67b897.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Share+Tech&display=swap" rel="stylesheet">
     <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
-    <script src="<?php echo asset('js/animacaoGaleria.js') ?>"></script>
-    <link rel="stylesheet" href="<?php echo asset('css/galeria.css') ?>">
-    <link rel="stylesheet" href="<?php echo asset('css/estiloIndex.css') ?>">
+    <script src="<?php echo e(url('/js/animacaogaleria.js')); ?>"></script>
+    <link rel="stylesheet" href="<?php echo e(url('css/galeria.css')); ?>" >
+    <link rel="stylesheet" href="<?php echo e(url('css/estiloindex.css')); ?>" >
 
 </head>
 
 <body id="corpo" onload ="navegarAjax('/projetos', '.conteudo')">
+
     <header class="cabecalho">
 
 
-        <nav class="menu">
-            <ul>
-                <li><a href="" class="botao" sl-fonte="/projetos" sl-destino=".conteudo"><i class="fas fa-cogs"></i> <span class="txtMenu">Projetos</span></a></li>
-                <li><a href="" class="botao" sl-fonte="/galeria" sl-destino=".conteudo"><i class="fas fa-camera"></i> <span class="txtMenu">Galeria</span></a></li>
-                <li><a href="/comentarios" class="botao" ><i class="fas fa-comments"></i> <span class="txtMenu">Comentarios</span></a></li>
-                <li><a href="" class="botao" sl-fonte="/sobre" sl-destino=".conteudo"><i class="fas fa-info-circle"></i> <span class="txtMenu">Sobre</span></a></li>
-            </ul>
-            <script src="<?php echo asset('js/carregaConteudo.js') ?>"></script>
-        </nav>
+     <?php if (isset($component)) { $__componentOriginald0b4154eafa6ddf1d90e70a636ac005452fbb4c9 = $component; } ?>
+<?php $component = $__env->getContainer()->make(App\View\Components\Menu::class, []); ?>
+<?php $component->withName('menu'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php $component->withAttributes([]); ?>
+<?php if (isset($__componentOriginald0b4154eafa6ddf1d90e70a636ac005452fbb4c9)): ?>
+<?php $component = $__componentOriginald0b4154eafa6ddf1d90e70a636ac005452fbb4c9; ?>
+<?php unset($__componentOriginald0b4154eafa6ddf1d90e70a636ac005452fbb4c9); ?>
+<?php endif; ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?> 
 
         <div class="logo">
             <a href="" sl-fonte="/projetos" sl-destino=".conteudo">
-                <img src="imagens/logoSenaiLab.png" alt="Logo" />
+                <img src="<?php echo e(url('/imagens/logosenailab.png')); ?>" alt="Logo" />
             </a>
         </div>
     </header>
     <main class="conteudo">
-        
+
     </main>
 
 
 </body>
 
-</html><?php /**PATH /home/maeh/ProjetoLab3D/resources/views/index.blade.php ENDPATH**/ ?>
+</html>
+<?php /**PATH /home/maeh/ProjetoLab3D/resources/views/index.blade.php ENDPATH**/ ?>

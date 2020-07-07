@@ -8,29 +8,22 @@
     <script src="https://kit.fontawesome.com/6f4a67b897.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Share+Tech&display=swap" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script src="<?php echo asset('js/animacaoGaleria.js') ?>"></script>
-    <link rel="stylesheet" href="<?php echo asset('css/galeria.css') ?>">
-    <link rel="stylesheet" href="<?php echo asset('css/estiloIndex.css') ?>">
+    <script src="{{url('js/animacaoGaleria.js')}}"></script>
+    <link rel="stylesheet" href="{{url('css/galeria.css')}}" >
+    <link rel="stylesheet" href="{{url('css/estiloindex.css')}}" >
 
 </head>
 
-<body id="corpo">
+<body id="corpo" >
+
     <header class="cabecalho">
 
 
-        <nav class="menu">
-            <ul>
-                <li><a href="/" class="botao"><i class="fas fa-cogs"></i> <span class="txtMenu">Projetos</span></a></li>
-                <li><a href=" " class="botao" sl-fonte="/galeria" sl-destino=".conteudo"><i class="fas fa-camera"></i> <span class="txtMenu">Galeria</span></a></li>
-                <li><a href="/comentarios" class="botao"><i class="fas fa-comments"></i> <span class="txtMenu">Comentarios</span></a></li>
-                <li><a href=" " class="botao" sl-fonte="/sobre" sl-destino=".conteudo"><i class="fas fa-info-circle"></i> <span class="txtMenu">Sobre</span></a></li>
-            </ul>
-            <script src="<?php echo asset('js/carregaConteudo.js') ?>"></script>
-        </nav>
+    <x-menu />
 
         <div class="logo">
             <a href="" sl-fonte="/projetos" sl-destino=".conteudo">
-                <img src="imagens/logoSenaiLab.png" alt="Logo" />
+                <img src="{{url('/imagens/logosenailab.png')}}" alt="Logo" />
             </a>
         </div>
     </header>

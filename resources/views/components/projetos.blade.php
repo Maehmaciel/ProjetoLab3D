@@ -1,5 +1,3 @@
-
-<!--------------------------------------------------------------------------------------------------------------------------->
 <div class="projetos">
 <button class="botaoEnviar"  onclick="navegarAjax('/enviarProjeto','.conteudo')"><i class="fas fa-upload"></i> Envie</button>
 <button class="botaoEnviar"  onclick="navegarAjax('/filtro3D','.proj')">Impressao 3D</button>
@@ -11,15 +9,14 @@
         @foreach($imagens as $img)
         @if ($projeto -> id === $img -> codprojeto)
         <div class="d imagemProjeto">
-            {{-- Campo abaixo é um comentario--}}
-            {{-- @if(($projeto -> id <= 3))
-            <img src="{{url('imagensProjeto/{{$img -> nome}}')}}" alt="Foto do projeto:{{$projeto -> nome}}">
+            @if(($projeto -> id <= 3))
+            <img src="imagensProjeto/{{$img -> nome}}" alt="Foto do projeto:{{$projeto -> nome}}">
             @else
-            <img src="{{url('/storage/image_upload/{$img-> nome}')}}"  alt="Foto do projeto: {{$projeto -> nome}}">
+            <img src=<?php echo asset("/storage/image_upload/{$img-> nome}")?> alt="Foto do projeto: {{$projeto -> nome}}">
             @endif
             <a class="capa" onclick='navegarAjax("/ver/{{$projeto -> id}}",".conteudo")'>
             {{$projeto -> nome}}
-            </a> --}}
+            </a>
         </div>
         @break
         @endif
@@ -30,5 +27,3 @@
 </div>
 </div>
 </div>
-
-<!--------------------------------------------------------------------------------------------------------------------------->
